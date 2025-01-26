@@ -34,6 +34,9 @@ La junta directiva de Pollito con Papas nos solicita lo siguiente:
     Adivinar las contraseñas detrás de los hashes compartidos al final del ejercicio. 
 
     Verificar si las palabras “pollito”, “papas”, “pollitoconpapas”, “kfc”, “chicken”, “pollo”, “pollocampero” y “apollo” hacen parte de las contraseñas más comunes. 
+
+## Análisis
+
 ## Estudiantes
 
 - [Felipe Ballesteros](https://github.com/pipe1408)
