@@ -1,24 +1,20 @@
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-
-        long tiempoInicio = System.nanoTime();
-
         StringBuilder texto;
         ArrayList<String> sospechasConfirmadas = new ArrayList<>();
         ArrayList<String> clavesDescifradas = new ArrayList<>();
         ArrayList<Integer> posicionClaves = new ArrayList<>();
-
         String hash = "";
 
-
+        Instant tiempoInicio = Instant.now();
 
         for (int posicion = 0; posicion < DatosPollito.ROCKYOU_3000.length; posicion++) {
             texto = new StringBuilder(DatosPollito.ROCKYOU_3000[posicion]);
             String textoOriginal = texto.toString();
-            int posicionHash = 0;
-
 
             for (String sospecha : DatosPollito.PALABRAS_COMUNES) {
                 if (texto.toString().contains(sospecha)) {
@@ -26,7 +22,6 @@ public class Main {
                     posicionClaves.add(posicion);
                 }
             }
-
 
             for (int year = 1995; year <= 2024; year++) {
                 texto = new StringBuilder(textoOriginal);
@@ -47,18 +42,12 @@ public class Main {
             }
         }
 
+        Instant tiempoFin = Instant.now();
+        long tiempoTotal = Duration.between(tiempoInicio, tiempoFin).toMillis();
 
-        long tiempoFin = System.nanoTime();
-
-        long tiempoTotal = tiempoFin - tiempoInicio;
-
-        double tiempoEnSegundos = tiempoTotal / 1_000_000_000.0;
-
-
-        System.out.println("Sospechas confirmadas: " + sospechasConfirmadas);
+        System.out.println("Palabras sospechosas encontradas en Rockyou: " + sospechasConfirmadas);
         System.out.println("Claves descifradas: " + clavesDescifradas);
-        System.out.println("Posiciones sospechosos: " + posicionClaves);
-        System.out.println("El tiempo total de ejecución fue de: " + tiempoEnSegundos + " segundos");
-
+        System.out.println("Palabras Rockyou identificadas (Posición): " + posicionClaves);
+        System.out.println("El tiempo total de ejecución fue de: " + tiempoTotal + " milisegundos");
     }
 }
