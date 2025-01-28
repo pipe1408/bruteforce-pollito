@@ -37,6 +37,31 @@ La junta directiva de Pollito con Papas nos solicita lo siguiente:
 
 ## Análisis
 
+**1. Complejidad** - Las contraseñas fueron demasiado fáciles de adivinar, pues no presentan una gran complejidad.
+Para el fin de descifrar las contraseñas, únicamente fueron necesarios tres ciclos for escritos en aproximadamente 25 
+líneas de código (descontando el ciclo for para identificar si las palabras sospechosas se encontraban o no dentro del 
+Rockyou). El esfuerzo computacional para la ejecución del programa es mínimo.
+
+**2. Tiempo de ejecución** - Evaluando únicamente el tiempo del ciclo for principal, al programa le tomó en promedio 160
+milisegundos descifrar las 21 contraseñas (aproximadamente 8 milisegundos por contraseña).
+
+**3. Particularidades identificadas** - Las 21 contraseñas comparten el mismo patrón de contener una palabra escrita en
+minúsculas, seguida de un año entre 1995 y 2024 y terminada por caracter de asterisco. Aunque todas las palabras que
+aparecen en las claves expuestas están dentro de la lista Rockyou, es importante resaltar que 17 de las 21 contraseñas
+utilizan el nombre propio de una persona, ya sea de ellos mismos o de algún familiar. Por último se identificó que 6
+contraseñas tienen una longitud menor a 12 caracteres.
+
+**4. Recomendaciones de seguridad** - Para mejorar la seguridad de la compañía, es recomendable fortalecer las políticas
+de seguridad de las contraseñas, empezando por exigir que las claves sean como mínimo de 12 caracteres, que contengan
+mayúsculas, minúsculas y al menos dos caracteres especiales, la compañía podría también tener un programa que verifique
+si al momento de cambiar una contraseña la combinación ingresada se encuentra en un archivo ROCKYOU, y rechazar el
+cambio hasta que la condición no se cumpla.
+
+Como tips adicionales para los empleados de la compañía, se
+sugiere reemplazar letras por números cuando se forman palabras (por ejemplo, "$3Rg10" o "f3L1pE"), aún más
+recomendable sería utilizar combinaciones aleatorias que no formen palabras, esto para evitar utilizar contraseñas
+presentes en algún archivo ROCKYOU.
+
 ## Estudiantes
 
 - [Felipe Ballesteros](https://github.com/pipe1408)
