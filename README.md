@@ -42,8 +42,12 @@ Para el fin de descifrar las contraseñas, únicamente fueron necesarios tres ci
 líneas de código (descontando el ciclo for para identificar si las palabras sospechosas se encontraban o no dentro del 
 Rockyou). El esfuerzo computacional para la ejecución del programa es mínimo.
 
-**2. Tiempo de ejecución** - Evaluando únicamente el tiempo del ciclo for principal, al programa le tomó en promedio 160
-milisegundos descifrar las 21 contraseñas (aproximadamente 8 milisegundos por contraseña).
+**2. Tiempo de ejecución** - Evaluando únicamente el tiempo del ciclo for principal para descifrar 21 hashes (según CPU):
+- Ryzen 5 5600G - 160ms aprox.
+- Intel Core i3 10G - 375ms aprox.
+
+Estos tiempos pueden evidenciar que el programa no requiere un gran esfuerzo computacional, pues el tiempo de ejecución
+es mínimo sin necesidad de un hardware de alta potencia.
 
 **3. Particularidades identificadas** - Las 21 contraseñas comparten el mismo patrón de contener una palabra escrita en
 minúsculas, seguida de un año entre 1995 y 2024 y terminada por caracter de asterisco. Aunque todas las palabras que
@@ -55,7 +59,9 @@ contraseñas tienen una longitud menor a 12 caracteres.
 de seguridad de las contraseñas, empezando por exigir que las claves sean como mínimo de 12 caracteres, que contengan
 mayúsculas, minúsculas y al menos dos caracteres especiales, la compañía podría también tener un programa que verifique
 si al momento de cambiar una contraseña la combinación ingresada se encuentra en un archivo ROCKYOU, y rechazar el
-cambio hasta que la condición no se cumpla.
+cambio hasta que la condición no se cumpla. Por último, la compañía debería exigir a los empleados activar la
+autenticación de doble factor para habilitar las funciones de su cuenta, esto reduciría en gran manera el riesgo a la
+seguridad, inclusive si se compromete la contraseña de uno de los empleados.
 
 Como tips adicionales para los empleados de la compañía, se
 sugiere reemplazar letras por números cuando se forman palabras (por ejemplo, "$3Rg10" o "f3L1pE"), aún más
@@ -66,4 +72,3 @@ presentes en algún archivo ROCKYOU.
 
 - [Felipe Ballesteros](https://github.com/pipe1408)
 - [Sergio Socha](https://github.com/sergiosocha)
-
